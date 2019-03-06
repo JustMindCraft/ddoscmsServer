@@ -1,16 +1,16 @@
 const gunMin = require('gun/gun.min.js')
 
-const indexRoute = {
+// const indexRoute = {
 
-    method: 'GET',
-    path: '/',
-    handler: (request, h) => {
-        return 'Hello, world!';
-    }, 
-    options: {
-        auth: false,
-    }
-}
+//     method: 'GET',
+//     path: '/',
+//     handler: (request, h) => {
+//         return 'Hello, world!';
+//     }, 
+//     options: {
+//         auth: false,
+//     }
+// }
 
 const gunRoute  = {
     method: 'GET',
@@ -35,7 +35,23 @@ const gunNtsRoute = {
 }
 
 
-const routes = [gunRoute, gunNtsRoute ]
+const gunRootRoute = {
+    method: 'GET',
+    path: '/gunnode/{param*}',
+    handler: {
+      directory: {
+        path: '../temp/gun',
+        redirectToSlash: true,
+        index: true
+      }
+    },
+    options: {
+        auth: false,
+    }
+}
+
+
+const routes = [gunRoute, gunNtsRoute, gunRootRoute]
     ;
 
 
