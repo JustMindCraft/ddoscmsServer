@@ -1,0 +1,39 @@
+{
+  "name": "ddoscms_server",
+  "version": "1.0.0",
+  "description": "this is ddoscms server with gun and sqlite user auth",
+  "main": "index.js",
+  "author": "justmind",
+  "license": "MIT",
+  "bundledDependencies": [
+    "node-pre-gyp"
+  ],
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-plugin-transform-async-to-module-method": "^6.24.1",
+    "babel-preset-es2015-node5": "^1.2.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "bcrypt": "^3.0.4",
+    "gun": "^0.9.9999991",
+    "hapi": "^18.1.0",
+    "hapi-auth-jwt2": "^8.3.0",
+    "hapi-swagger": "^9.3.1",
+    "inert": "^5.1.2",
+    "joi": "^14.3.1",
+    "lodash": "^4.17.11",
+    "lokijs": "^1.5.6",
+    "node-gyp": "^3.8.0",
+    "node-pre-gyp": "^0.12.0",
+    "nodemon": "^1.18.10",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "vision": "^5.4.4",
+    "webtorrent": "^0.103.0"
+  },
+  "scripts": {
+    "start": "cp -rf ./node_modules/gun/ ./temp &&  NODE_ENV=production nodemon index.js",
+    "dev": "cp -rf ./node_modules/gun/ ./temp && NODE_ENV=development nodemon index.js"
+  }
+}
