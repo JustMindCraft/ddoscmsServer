@@ -36,6 +36,6 @@
   "scripts": {
     "start": "cp -rf ./node_modules/gun/ ./temp &&  NODE_ENV=production nodemon index.js",
     "dev": "cp -rf ./node_modules/gun/ ./temp && NODE_ENV=development nodemon index.js",
-    "tracker": "bittorrent-tracker"
+    "tracker": "bittorrent-tracker --port 9876"
   }
 }
